@@ -1,1 +1,3 @@
 mvn install:install-file -DgroupId=com.google.code.kaptcha -DartifactId=kaptcha -Dversion=2.3.2 -Dfile=E:\cas-4.0.0\cas-server-webapp\lib\kaptcha-2.3.2.jar -Dpackaging=jar -DgeneratePom=true
+
+mvn install:install-file -DgroupId=org.jasig.cas -DartifactId=cas-server-webapp -Dversion=4.0.0 -Dfile=cas-server-webapp-4.0.0.war -Dpackaging=war

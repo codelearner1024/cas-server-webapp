@@ -170,6 +170,7 @@
 
     <!-- 自定义基于数据库认证策略 -->
     <bean id="primaryAuthenticationHandler" class="org.jasig.cas.adaptors.jdbc.QueryDatabaseAuthenticationHandler">
+    <!-- <bean id="primaryAuthenticationHandler" class="org.jasig.cas.adaptors.jdbc.ValidUserQueryDBAuthenticationHandler"> -->
         <property name="dataSource" ref="dataSource"/>
         <property name="sql" value="${auth.sql}"/>
         <property name="passwordEncoder" ref="MD5PasswordEncoder"/>

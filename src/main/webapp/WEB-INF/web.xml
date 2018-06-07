@@ -243,7 +243,7 @@
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
-
+	<!-- 添加distributable支持集群部署 -->
     <distributable/>
 
 </web-app>
