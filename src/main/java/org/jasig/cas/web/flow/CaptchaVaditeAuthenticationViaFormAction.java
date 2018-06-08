@@ -46,6 +46,7 @@ public class CaptchaVaditeAuthenticationViaFormAction extends AuthenticationViaF
         }
 
         // 密码非空验证
+        //TODO 如果加入荣邦用户的逻辑的话，就不需要验证密码是否为空
         if (StringUtils.isEmpty(password)) {
             populateErrorsInstance("required.password", messageContext);
             count++;

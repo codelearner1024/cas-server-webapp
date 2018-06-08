@@ -69,6 +69,7 @@ public class Client {
      * @param server
      * @param username
      * @param password
+     * 获取服务端的授权
      */
     private static String getTicketGrantingTicket(final String server, final String username, final String password) {
         final HttpClient client = new HttpClient();
@@ -147,8 +148,8 @@ public class Client {
     public static void main(final String[] args) throws Exception {
         final String server = "http://localhost:8080/cas/v1/tickets";
         final String username = "adminoue";
-        final String password = "4009696109";
-        final String service = "http://localhost:8080";
+        final String password = "123456";
+        final String service = "http://localhost:8888/index";
         final String proxyValidate = "http://localhost:8080/cas/proxyValidate";
         ticketValidate(proxyValidate, getTicket(server, username, password, service), service);
     }

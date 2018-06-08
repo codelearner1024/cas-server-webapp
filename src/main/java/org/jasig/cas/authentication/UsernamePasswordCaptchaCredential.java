@@ -15,6 +15,8 @@ public class UsernamePasswordCaptchaCredential extends RememberMeUsernamePasswor
     @Size(min = 1, message = "required.captcha")
     private String captcha;
 
+    //TODO 还需要添加用户类型，
+    
     public String getCaptcha() {
         return captcha;
     }
