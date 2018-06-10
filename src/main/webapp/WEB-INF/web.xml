@@ -150,6 +150,11 @@
         <servlet-name>cas</servlet-name>
         <url-pattern>/p3/proxyValidate</url-pattern>
     </servlet-mapping>
+    <!-- 添加自定义的controller的映射 -->
+    <servlet-mapping>
+        <servlet-name>cas</servlet-name>
+        <url-pattern>/internerLogin</url-pattern>
+    </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>cas</servlet-name>
