@@ -1,3 +1,5 @@
+package org.jasig.cas.util;
+
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.NameValuePair;
 import org.apache.commons.httpclient.methods.GetMethod;
@@ -147,20 +149,19 @@ public class Client {
 			throw new IllegalArgumentException(message);
 	}
 
-	/**  
+	/**
 	 * @param proxyValidate
 	 * @param server
 	 * @param username
 	 * @param password
-	 * @param service  
+	 * @param service
 	 * @功能描述:内登录
 	 * @Author:WWG
-	 * @date:2018年6月10日  下午5:21:44
-	 * @Version:1.0  
+	 * @date:2018年6月10日 下午5:21:44
+	 * @Version:1.0
 	 */
-	public static void intenerLogin(String proxyValidate, String server, String username, String password,
-			String service) {
-		ticketValidate(proxyValidate, getTicket(server, username, password, service), service);
+	public static void intenerLogin(String proxyValidate, String ticket, String service) {
+		ticketValidate(proxyValidate, ticket, service);
 	}
 
 	public static void main(final String[] args) throws Exception {

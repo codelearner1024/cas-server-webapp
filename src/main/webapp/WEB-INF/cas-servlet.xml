@@ -90,6 +90,7 @@
                 <prop key="/authorizationFailure.html">passThroughController</prop>
                 <prop key="/status">healthCheckController</prop>
                 <prop key="/statistics">statisticsController</prop>
+                <prop key="/internerLogin">internerLoginController</prop>
             </util:properties>
         </property>
         <!--
@@ -238,6 +239,9 @@
           p:warnCookieGenerator-ref="warnCookieGenerator"
           p:ticketRegistry-ref="ticketRegistry"/>
     -->
+
+	<bean id="internerLoginController" class="org.jasig.cas.web.InternerLoginController"></bean>
+
 
     <!-- 自定义验证码校验的CaptchaVaditeAuthenticationViaFormAction -->
     <bean id="authenticationViaFormAction" class="org.jasig.cas.web.flow.CaptchaVaditeAuthenticationViaFormAction"
