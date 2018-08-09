@@ -4,3 +4,6 @@ src/main/resources/rebel.xml
 *.iml
 overlays
 *.log
+*.classpath
+*.project
+*.settings
