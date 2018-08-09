@@ -38,21 +38,23 @@ public class InternerLoginController extends AbstractController {
 		// attributes.put("reason", "操作成功");
 		// view.setAttributesMap(attributes);
 		// mav.setView(view); return mav;
-		String service = (String) request.getAttribute("service");
-		String type = (String) request.getAttribute("type");
-
+		String service = request.getParameter("service");
+		String type = request.getParameter("type");
+		//貌似还会返回一个code用于抓取荣邦用户数据
+		
+		
 		// 内登录操作
 		final String server = "http://localhost:8080/cas/v1/tickets";
 		final String username = "adminoue";
 		final String password = "123456";
 		// final String service = "http://localhost:8888/index";
 		final String proxyValidate = "http://localhost:8080/cas/proxyValidate";
-		String ticket = Client.getTicket(server, username, password, service);
+		String ticket = Client.getTicketGrantingTicket(server, username, password);
 		//相应ticket到cookie中。
 		Cookie tcookie = new Cookie(Constants.COOKIE_CAS_TGC,ticket);
 		response.addCookie(tcookie);
 		//对服务进行ST认证
-		Client.intenerLogin(proxyValidate, ticket, service);
+		Client.intenerLogin(proxyValidate, server, ticket, service);
 		ModelAndView mv = new ModelAndView("redirect:/login？service=" + service + "&type=" + type);
 		Map<String, Object> attributes = new HashMap<String, Object>();
 		attributes.put("status", Boolean.TRUE);

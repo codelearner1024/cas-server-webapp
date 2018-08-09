@@ -43,7 +43,7 @@ public class Client {
 
 		final PostMethod post = new PostMethod(server + "/" + ticketGrantingTicket);
 
-		post.setRequestBody(new NameValuePair[] { new NameValuePair("service", service) });
+		post.setRequestBody(new NameValuePair[] { new NameValuePair("service", service)});
 
 		try {
 			client.executeMethod(post);
@@ -74,7 +74,7 @@ public class Client {
 	 * @param password
 	 *            获取服务端的授权（获取TGT）
 	 */
-	private static String getTicketGrantingTicket(final String server, final String username, final String password) {
+	public static String getTicketGrantingTicket(final String server, final String username, final String password) {
 		final HttpClient client = new HttpClient();
 
 		final PostMethod post = new PostMethod(server);
@@ -160,8 +160,8 @@ public class Client {
 	 * @date:2018年6月10日 下午5:21:44
 	 * @Version:1.0
 	 */
-	public static void intenerLogin(String proxyValidate, String ticket, String service) {
-		ticketValidate(proxyValidate, ticket, service);
+	public static void intenerLogin(String proxyValidate,String server, String tgt, String service) {
+		ticketValidate(proxyValidate, getServiceTicket(server, tgt, service), service);
 	}
 
 	public static void main(final String[] args) throws Exception {
